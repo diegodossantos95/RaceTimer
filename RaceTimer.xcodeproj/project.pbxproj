@@ -17,8 +17,8 @@
 		8FD6CDDC1AF6B0E900470636 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD6CDDB1AF6B0E900470636 /* NameTableViewCell.swift */; };
 		8FD6CDDE1AF6B0F300470636 /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD6CDDD1AF6B0F300470636 /* TimeTableViewCell.swift */; };
 		8FD6CDE01AF6B10500470636 /* SaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD6CDDF1AF6B10500470636 /* SaveViewController.swift */; };
-		8FD6CDE61AF6CFA900470636 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD6CDE51AF6CFA900470636 /* Location.swift */; };
-		8FD6CDE81AF6CFA900470636 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD6CDE71AF6CFA900470636 /* Race.swift */; };
+		8FD6CDEA1AF6EFAB00470636 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD6CDE91AF6EFAB00470636 /* Location.swift */; };
+		8FD6CDEC1AF6EFAB00470636 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD6CDEB1AF6EFAB00470636 /* Race.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +46,8 @@
 		8FD6CDDB1AF6B0E900470636 /* NameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
 		8FD6CDDD1AF6B0F300470636 /* TimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
 		8FD6CDDF1AF6B10500470636 /* SaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveViewController.swift; sourceTree = "<group>"; };
-		8FD6CDE51AF6CFA900470636 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		8FD6CDE71AF6CFA900470636 /* Race.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
+		8FD6CDE91AF6EFAB00470636 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		8FD6CDEB1AF6EFAB00470636 /* Race.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +104,8 @@
 		8FB6C2981AF2D246004927F0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8FD6CDE71AF6CFA900470636 /* Race.swift */,
-				8FD6CDE51AF6CFA900470636 /* Location.swift */,
+				8FD6CDEB1AF6EFAB00470636 /* Race.swift */,
+				8FD6CDE91AF6EFAB00470636 /* Location.swift */,
 				8FB6C2991AF2D246004927F0 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -246,14 +246,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FD6CDE81AF6CFA900470636 /* Race.swift in Sources */,
+				8FD6CDEC1AF6EFAB00470636 /* Race.swift in Sources */,
 				8FB6C2A01AF2D246004927F0 /* ViewController.swift in Sources */,
 				8FD6CDE01AF6B10500470636 /* SaveViewController.swift in Sources */,
 				8FB6C29E1AF2D246004927F0 /* RaceTimer.xcdatamodeld in Sources */,
 				8FD6CDDC1AF6B0E900470636 /* NameTableViewCell.swift in Sources */,
 				8FB6C29B1AF2D246004927F0 /* AppDelegate.swift in Sources */,
 				8FD6CDDE1AF6B0F300470636 /* TimeTableViewCell.swift in Sources */,
-				8FD6CDE61AF6CFA900470636 /* Location.swift in Sources */,
+				8FD6CDEA1AF6EFAB00470636 /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,5 +14,6 @@ class Location: NSManagedObject {
     @NSManaged var latitude: String
     @NSManaged var longitude: String
     @NSManaged var timestamp: NSDate
+    @NSManaged var race: Race
 
 }
