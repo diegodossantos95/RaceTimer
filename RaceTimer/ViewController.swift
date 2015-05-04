@@ -28,7 +28,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         timeLabel.text = "00:00.000"
         
         self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
     }
