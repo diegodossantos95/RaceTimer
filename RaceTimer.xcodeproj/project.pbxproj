@@ -14,6 +14,11 @@
 		8FB6C2A51AF2D246004927F0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FB6C2A41AF2D246004927F0 /* Images.xcassets */; };
 		8FB6C2A81AF2D246004927F0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB6C2A61AF2D246004927F0 /* LaunchScreen.xib */; };
 		8FB6C2B41AF2D246004927F0 /* RaceTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6C2B31AF2D246004927F0 /* RaceTimerTests.swift */; };
+		8FD6CDDC1AF6B0E900470636 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD6CDDB1AF6B0E900470636 /* NameTableViewCell.swift */; };
+		8FD6CDDE1AF6B0F300470636 /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD6CDDD1AF6B0F300470636 /* TimeTableViewCell.swift */; };
+		8FD6CDE01AF6B10500470636 /* SaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD6CDDF1AF6B10500470636 /* SaveViewController.swift */; };
+		8FD6CDE61AF6CFA900470636 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD6CDE51AF6CFA900470636 /* Location.swift */; };
+		8FD6CDE81AF6CFA900470636 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD6CDE71AF6CFA900470636 /* Race.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,11 @@
 		8FB6C2AD1AF2D246004927F0 /* RaceTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaceTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB6C2B21AF2D246004927F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FB6C2B31AF2D246004927F0 /* RaceTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceTimerTests.swift; sourceTree = "<group>"; };
+		8FD6CDDB1AF6B0E900470636 /* NameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
+		8FD6CDDD1AF6B0F300470636 /* TimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
+		8FD6CDDF1AF6B10500470636 /* SaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveViewController.swift; sourceTree = "<group>"; };
+		8FD6CDE51AF6CFA900470636 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		8FD6CDE71AF6CFA900470636 /* Race.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +89,9 @@
 		8FB6C2971AF2D246004927F0 /* RaceTimer */ = {
 			isa = PBXGroup;
 			children = (
+				8FD6CDDA1AF6B0D800470636 /* SaveRace */,
+				8FD6CDD91AF6B0CC00470636 /* Main */,
 				8FB6C29A1AF2D246004927F0 /* AppDelegate.swift */,
-				8FB6C29F1AF2D246004927F0 /* ViewController.swift */,
 				8FB6C2A11AF2D246004927F0 /* Main.storyboard */,
 				8FB6C2A41AF2D246004927F0 /* Images.xcassets */,
 				8FB6C2A61AF2D246004927F0 /* LaunchScreen.xib */,
@@ -93,6 +104,8 @@
 		8FB6C2981AF2D246004927F0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8FD6CDE71AF6CFA900470636 /* Race.swift */,
+				8FD6CDE51AF6CFA900470636 /* Location.swift */,
 				8FB6C2991AF2D246004927F0 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -113,6 +126,24 @@
 				8FB6C2B21AF2D246004927F0 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8FD6CDD91AF6B0CC00470636 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8FB6C29F1AF2D246004927F0 /* ViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		8FD6CDDA1AF6B0D800470636 /* SaveRace */ = {
+			isa = PBXGroup;
+			children = (
+				8FD6CDDB1AF6B0E900470636 /* NameTableViewCell.swift */,
+				8FD6CDDD1AF6B0F300470636 /* TimeTableViewCell.swift */,
+				8FD6CDDF1AF6B10500470636 /* SaveViewController.swift */,
+			);
+			name = SaveRace;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +246,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FD6CDE81AF6CFA900470636 /* Race.swift in Sources */,
 				8FB6C2A01AF2D246004927F0 /* ViewController.swift in Sources */,
+				8FD6CDE01AF6B10500470636 /* SaveViewController.swift in Sources */,
 				8FB6C29E1AF2D246004927F0 /* RaceTimer.xcdatamodeld in Sources */,
+				8FD6CDDC1AF6B0E900470636 /* NameTableViewCell.swift in Sources */,
 				8FB6C29B1AF2D246004927F0 /* AppDelegate.swift in Sources */,
+				8FD6CDDE1AF6B0F300470636 /* TimeTableViewCell.swift in Sources */,
+				8FD6CDE61AF6CFA900470636 /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +451,7 @@
 				8FB6C2B91AF2D246004927F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FB6C2BA1AF2D246004927F0 /* Build configuration list for PBXNativeTarget "RaceTimerTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +460,7 @@
 				8FB6C2BC1AF2D246004927F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -7,42 +7,67 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
     var timer = NSTimer()
     var counter : Float = 0
-    var isRunning = false
+    var lapTime : Float = 0
+    var isRunning : Bool = false
+    var race = NSMutableArray()
+    let locationManager = CLLocationManager()
+    var startLine = CLLocation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = 50
-        timeLabel.text = "0"//String(counter)
+        startButton.layer.masksToBounds = true
+        startButton.layer.cornerRadius = 50
+        timeLabel.text = "00:00.000"
+        
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func startPress(sender: UIButton) {
         if isRunning{
-            button.backgroundColor = UIColor.grayColor()
+            performSegueWithIdentifier("saveSegue", sender: nil)
+            startButton.backgroundColor = UIColor.grayColor()
             isRunning = false
             timer.invalidate()
+            lapTime = 0
+            counter = 0
+            timeLabel.text = "00:00.000"
         } else {
             isRunning = true
-            button.backgroundColor = UIColor.redColor()
+            startButton.backgroundColor = UIColor.redColor()
             timer = NSTimer.scheduledTimerWithTimeInterval(0.001, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
+            startLine = locationManager.location
+        }
+    }
+    
+ 
+    
+    @IBAction func lapPress(sender: UIButton) {
+        if isRunning{
+            var time = stringFromTimeInterval(lapTime)
+            race.addObject(time)
+            lapTime = 0
         }
     }
     
     func updateCounter() {
         counter = counter + 0.001
-        timeLabel.text = stringFromTimeInterval(counter) as? String//String(format: "%0.03f", counter)////String(counter++)
+        lapTime = lapTime + 0.001
+        timeLabel.text = stringFromTimeInterval(counter) as? String
     }
     
     func stringFromTimeInterval(interval: Float) -> NSString {
@@ -53,10 +78,16 @@ class ViewController: UIViewController {
         
         var seconds = ti % 60
         var minutes = (ti / 60) % 60
-        //var hours = (ti / 3600)
         
-        return String(format:"%0.2d:%0.2d.%0.3d",minutes,seconds,ms) //"%0.2d:%0.2d:%0.2d.%0.3d",hours,minutes,seconds,ms)
+        return String(format:"%0.2d:%0.2d.%0.3d",minutes,seconds,ms)
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "saveSegue"{
+            var dvc = segue.destinationViewController as! UINavigationController
+            var svc = dvc.viewControllers[0] as! SaveViewController
+            svc.times = race
+        }
+    }
 }
 
