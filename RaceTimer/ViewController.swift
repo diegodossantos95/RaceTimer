@@ -26,15 +26,34 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         startButton.layer.masksToBounds = true
         startButton.layer.cornerRadius = 50
         timeLabel.text = "00:00.000"
-        
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         self.locationManager.requestWhenInUseAuthorization()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.locationManager.startUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        
+        
+        var loc = manager.location
+        
+       var meters = CLLocation.distanceFromLocation(startLine)
+        
+//        NSLog("%@", meters)
+        
+        
+        //NSLog(mang.latitude.description + " " + mang.longitude.description)
+        
+        //NSLog("Speed " + manager.location.speed.description)
+
     }
     
     @IBAction func startPress(sender: UIButton) {
@@ -46,6 +65,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             lapTime = 0
             counter = 0
             timeLabel.text = "00:00.000"
+            locationManager.stopUpdatingLocation()
         } else {
             isRunning = true
             startButton.backgroundColor = UIColor.redColor()
